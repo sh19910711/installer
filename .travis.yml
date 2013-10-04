@@ -6,7 +6,7 @@ install:
   - bundle install
 script:
   - which bash
-  - curl -o - http://sh19910711.github.io/installer/install.sh | PACKAGE_NAME=all sh
+  - curl -o - http://sh19910711.github.io/installer/install.sh | PACKAGE_NAME=all FLAG_DEBUG_MODE=true bash
   - bundle exec rake spec
 gemfile:
   - Gemfile
