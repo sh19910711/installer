@@ -17,7 +17,7 @@ call_deps m4
 if [ ! -x ${BIN_DIR}/m4 ]; then
   echo install m4: start
   pushd .
-  curl -o - http://ftp.jaist.ac.jp/pub/GNU/m4/m4-${m4_version}.tar.gz | tar zxf
+  curl -o - http://ftp.jaist.ac.jp/pub/GNU/m4/m4-${m4_version}.tar.gz | tar zxf -
   cd m4-${m4_version}
   ./configure --prefix=${SRC_DIR}/m4-${m4_version} \
     && make \
