@@ -26,7 +26,7 @@ if [ ! -x ${BIN_DIR}/m4 ]; then
   curl -o - http://ftp.jaist.ac.jp/pub/GNU/m4/m4-${m4_version}.tar.gz | tar zxf -
   cd m4-${m4_version}
   ./configure --prefix=${SRC_DIR}/m4-${m4_version} > /dev/null \
-    && make > /dev/null \
+    && make ${MAKEOPTS} > /dev/null \
     && make install > /dev/null
   [ $? -ne 0 ] && exit 1
   popd

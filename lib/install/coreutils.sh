@@ -26,7 +26,7 @@ if [ ! -x ${BIN_DIR}/coreutils ]; then
   curl -o - http://ftp.jaist.ac.jp/pub/GNU/coreutils/coreutils-${coreutils_version}.tar.xz | tar Jxf -
   cd coreutils-${coreutils_version}
   ./configure --prefix=${SRC_DIR}/coreutils-${coreutils_version} > /dev/null \
-    && make > /dev/null \
+    && make ${MAKEOPTS} > /dev/null \
     && make install > /dev/null
   [ $? -ne 0 ] && exit 1
   popd

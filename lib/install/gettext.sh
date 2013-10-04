@@ -36,7 +36,7 @@ if [ ! -x ${BIN_DIR}/gettext ]; then
     --disable-csharp \
     --without-emacs \
     > /dev/null \
-    && make > /dev/null \
+    && make ${MAKEOPTS} > /dev/null \
     && make install > /dev/null
   [ $? -ne 0 ] && exit 1
   popd

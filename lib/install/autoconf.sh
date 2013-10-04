@@ -27,7 +27,7 @@ if [ ! -x ${PREFIX}/bin/autoconf ]; then
   curl -o - http://ftp.jaist.ac.jp/pub/GNU/autoconf/autoconf-${autoconf_version}.tar.gz | tar zxf -
   exec_do cd autoconf-${autoconf_version}
   ./configure --prefix=${PREFIX} > /dev/null \
-    && make > /dev/null \
+    && make ${MAKEOPTS} > /dev/null \
     && make install > /dev/null
   [ $? -ne 0 ] && exit 1
   popd

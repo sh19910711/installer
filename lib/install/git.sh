@@ -28,7 +28,7 @@ if [ ! -x ${BIN_DIR}/git ]; then
   cd git-${git_version}
   autoconf
   ./configure --prefix=${SRC_DIR}/git-${git_version} > /dev/null \
-    && make > /dev/null \
+    && make ${MAKEOPTS} > /dev/null \
     && make install > /dev/null
   [ $? -ne 0 ] && exit 1
   ln -s ${SRC_DIR}/git-${git_version}/bin/* ${BIN_DIR}

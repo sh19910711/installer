@@ -28,7 +28,7 @@ if [ ! -x ${BIN_DIR}/curl ]; then
   cd curl-${curl_version}
   autoconf
   ./configure --prefix=${SRC_DIR}/curl-${curl_version} > /dev/null \
-    && make > /dev/null \
+    && make ${MAKEOPTS} > /dev/null \
     && make install > /dev/null
   [ $? -ne 0 ] && exit 1
   ln -s ${SRC_DIR}/curl-${curl_version}/bin/* ${BIN_DIR}

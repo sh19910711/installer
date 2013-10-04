@@ -27,7 +27,7 @@ if [ ! -x ${BIN_DIR}/make ]; then
   curl -o - http://ftp.jaist.ac.jp/pub/GNU/make/make-${make_version}.tar.gz | tar zxf -
   cd make-${make_version}
   ./configure --prefix=${SRC_DIR}/make-${make_version} > /dev/null \
-    && make > /dev/null \
+    && make ${MAKEOPTS} > /dev/null \
     && make install > /dev/null
   [ $? -ne 0 ] && exit 1
   popd
