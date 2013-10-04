@@ -22,9 +22,10 @@ if [ ! -x ${BIN_DIR}/git ]; then
   wget -O - https://github.com/git/git/archive/v${git_version}.tar.gz | tar zxf -
   cd git-${git_version}
   autoconf
-  ./configure --prefix=${SRC_DIR}/git-${git_version} \
-    && make \
-    && make install
+  ./configure --prefix=${SRC_DIR}/git-${git_version} > /dev/null \
+    && make > /dev/null \
+    && make install > /dev/null
+  [ $? -ne 0 ] && exit 1
   ln -s ${SRC_DIR}/git-${git_version}/bin/* ${BIN_DIR}
   popd
   echo install git: finish

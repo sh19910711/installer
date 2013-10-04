@@ -20,9 +20,10 @@ if [ ! -x ${BIN_DIR}/m4 ]; then
   cd ${TMP_DIR}
   curl -o - http://ftp.jaist.ac.jp/pub/GNU/m4/m4-${m4_version}.tar.gz | tar zxf -
   cd m4-${m4_version}
-  ./configure --prefix=${SRC_DIR}/m4-${m4_version} \
-    && make \
-    && make install
+  ./configure --prefix=${SRC_DIR}/m4-${m4_version} > /dev/null \
+    && make > /dev/null \
+    && make install > /dev/null
+  [ $? -ne 0 ] && exit 1
   popd
   exec_do ln -s ${SRC_DIR}/m4-${m4_version}/bin/* ${BIN_DIR}
   echo install m4: finish

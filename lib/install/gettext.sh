@@ -21,9 +21,10 @@ if [ ! -x ${BIN_DIR}/gettext ]; then
   # http://ftp.jaist.ac.jp/pub/GNU/gettext/gettext-3.82.tar.gz
   curl -o - http://ftp.jaist.ac.jp/pub/GNU/gettext/gettext-${gettext_version}.tar.gz | tar zxf -
   cd gettext-${gettext_version}
-  ./configure --prefix=${SRC_DIR}/gettext-${gettext_version} \
-    && make \
-    && make install
+  ./configure --prefix=${SRC_DIR}/gettext-${gettext_version} > /dev/null \
+    && make > /dev/null \
+    && make install > /dev/null
+  [ $? -ne 0 ] && exit 1
   popd
   exec_do ln -s ${SRC_DIR}/gettext-${gettext_version}/bin/* ${BIN_DIR}
   echo install gettext: finish
