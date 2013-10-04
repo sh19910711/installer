@@ -44,7 +44,7 @@ exec_do _mkdir ${SRC_DIR}
 export packages_m4=
 export m4_version=1.4.17
 export m4_installs=m4
-export m4_deps=
+export m4_deps=make
 
 # make
 export packages_make=
@@ -56,11 +56,11 @@ export make_deps=
 export packages_autoconf=
 export autoconf_version=2.69
 export autoconf_installs=autoconf
-export autoconf_deps=m4
+export autoconf_deps=make m4
 
 # git
 export packages_git=
 export git_version=1.8.4
 export git_installs=git
-export git_deps=autoconf
+export git_deps=make autoconf
 
