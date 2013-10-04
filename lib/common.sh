@@ -46,6 +46,12 @@ export m4_version=1.4.17
 export m4_installs=m4
 export m4_deps=
 
+# make
+export packages_make=
+export make_version=3.82
+export make_installs=make
+export make_deps=
+
 # autoconf
 export packages_autoconf=
 export autoconf_version=2.69
