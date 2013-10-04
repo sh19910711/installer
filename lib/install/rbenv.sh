@@ -26,6 +26,11 @@ if [ ! -x ${SRC_DIR}/rbenv-${rbenv_version}/bin/rbenv ]; then
   exec_do git clone https://github.com/sstephenson/rbenv.git ${SRC_DIR}/rbenv-${rbenv_version}
   exec_do git clone https://github.com/sstephenson/ruby-build.git ${SRC_DIR}/rbenv-${rbenv_version}/plugins/ruby-build
   ln -s ${SRC_DIR}/rbenv-${rbenv_version}/bin/rbenv ${BIN_DIR}/rbenv
+  # config
+  if [ ! -z ${BASH_VERSION} ]; then
+    echo 'export RBENV_ROOT=$HOME/local/src/rbenv-'${rbenv_version} >> $HOME/.bash_profile
+    echo 'eval "$(rbenv init -)"' >> $HOME/.bash_profile
+  fi
   popd
   echo install rbenv: finish
 fi
