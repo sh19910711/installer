@@ -20,17 +20,21 @@ exec_do() {
   $@
 }
 
+_rehash() {
+  if [ ! -z "${BASH_VERSION}" ]; then
+    hash -r
+  else
+    rehash
+  fi
+}
+
 call_installer() {
   installs=`eval 'echo $'${1}'_installs'`
   deps=`eval 'echo $'${1}'_deps'`
   for install in ${installs}; do
     echo "    dep: ${install}"
     curl -o - ${BASE_URL}/lib/install/${install}.sh?`date '+%s'` | bash
-    if [ ! -z "${BASH_VERSION}" ]; then
-      hash -r
-    else
-      rehash
-    fi
+    exec_do _rehash
   done
 }
 
@@ -40,11 +44,7 @@ call_deps() {
   for install in ${deps}; do
     echo "    dep: ${install}"
     curl -o - ${BASE_URL}/lib/install/${install}.sh?`date '+%s'` | bash
-    if [ ! -z "${BASH_VERSION}" ]; then
-      hash -r
-    else
-      rehash
-    fi
+    exec_do _rehash
   done
 }
 

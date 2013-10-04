@@ -44,5 +44,6 @@ if [  ${PACKAGE_NAME} = "usage" ]; then
   usage
 else
   call_installer ${PACKAGE_NAME}
+  exec_do _rehash
 fi
 
