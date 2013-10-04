@@ -20,7 +20,7 @@ if [ ! -x ${BIN_DIR}/git ]; then
   pushd .
   cd ${TMP_DIR}
   wget -O - https://github.com/git/git/archive/v${git_version}.tar.gz | tar zxf - -C ${TMP_DIR}
-  cd git-*
+  cd git-${git_version}
   autoconf
   ./configure --prefix=${SRC_DIR}/git-${git_version} \
     && make \

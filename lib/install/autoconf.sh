@@ -19,7 +19,7 @@ if [ ! -x ${BIN_DIR}/autoconf ]; then
   pushd .
   exec_do cd ${TMP_DIR}
   curl -o - http://ftp.jaist.ac.jp/pub/GNU/autoconf/autoconf-${autoconf_version}.tar.gz | tar zxf -
-  exec_do cd autoconf-*
+  exec_do cd autoconf-${autoconf_version}
   ./configure --prefix=${SRC_DIR}/autoconf-${autoconf_version} \
     && make \
     && make install
