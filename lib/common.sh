@@ -77,6 +77,12 @@ export m4_version=1.4.17
 export m4_installs='m4'
 export m4_deps='make'
 
+# rbenv
+export packages_rbenv=
+export rbenv_version=0.4.0
+export rbenv_installs='rbenv'
+export rbenv_deps='git make'
+
 # diffutils
 export packages_diffutils=
 export diffutils_version=3.2
