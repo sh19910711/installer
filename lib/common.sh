@@ -54,6 +54,12 @@ export make_version=3.82
 export make_installs='make'
 export make_deps=''
 
+# gettext
+export packages_gettext=
+export gettext_version=0.18.3.1
+export gettext_installs='gettext'
+export gettext_deps=''
+
 # autoconf
 export packages_autoconf=
 export autoconf_version=2.69
@@ -64,5 +70,5 @@ export autoconf_deps='make m4'
 export packages_git=
 export git_version=1.8.4
 export git_installs='git'
-export git_deps='make autoconf'
+export git_deps='make autoconf gettext'
 
