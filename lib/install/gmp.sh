@@ -30,6 +30,7 @@ if [ ! -x ${BIN_DIR}/gmp ]; then
     && make install > /dev/null
   [ $? -ne 0 ] && exit 1
   popd
-  exec_do ln -s ${SRC_DIR}/gmp-${gmp_version}/bin/* ${BIN_DIR}
+  exec_do ln -s ${SRC_DIR}/gmp-${gmp_version}/lib/* ${LIB_DIR}
+  exec_do ln -s ${SRC_DIR}/gmp-${gmp_version}/include/* ${INCLUDE_DIR}
   echo install gmp: finish
 fi
