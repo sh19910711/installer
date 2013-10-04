@@ -11,9 +11,9 @@ export SRC_DIR=${USER_PREFIX}/src
 export PATH=${BIN_DIR}/bin:${PATH}
 export INCLUDE=${INCLUDE_DIR}:${INCLUDE}
 export C_INCLUDE_PATH=${INCLUDE_DIR}:${C_INCLUDE_PATH}
-export CFLAGS="-L${LIB_DIR} -I${INCLUDE_DIR} ${CPPFLAGS}"
-export CPPFLAGS="${CFLAGS} ${CPPFLAGS}"
-export LDFLAGS="-L${LIB_DIR} ${LDFLAGS}"
+export CFLAGS="-I${INCLUDE_DIR} ${CPPFLAGS}"
+export CPPFLAGS="${CFLAGS}"
+export LDFLAGS="-L${LIB_DIR}"
 
 _mkdir() {
   if [ ! -d $1 ]; then
