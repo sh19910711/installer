@@ -4,6 +4,7 @@ echo common.sh: start
 
 export USER_PREFIX=${HOME}/local
 export BIN_DIR=${USER_PREFIX}/bin
+export LIB_DIR=${USER_PREFIX}/lib
 export SRC_DIR=${USER_PREFIX}/src
 export TMP_DIR=`mktemp -d /tmp/XXXXXXXXXXXXXXXXXXXXXXXX`
 export PATH=${BIN_DIR}/bin:${PATH}
@@ -39,11 +40,17 @@ exec_do _mkdir ${USER_PREFIX}
 exec_do _mkdir ${BIN_DIR}
 exec_do _mkdir ${SRC_DIR}
 
+# m4
+export packages_m4=
+export m4_version=1.4.17
+export m4_installs=m4
+export m4_deps=
+
 # autoconf
 export packages_autoconf=
 export autoconf_version=2.69
 export autoconf_installs=autoconf
-export autoconf_deps=
+export autoconf_deps=m4
 
 # git
 export packages_git=
