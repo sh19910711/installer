@@ -7,7 +7,7 @@ echo PACKAGE_NAME: ${PACKAGE_NAME}
 
 if [ -z ${COMMON_SCRIPT} ]; then
   export COMMON_SCRIPT=`mktemp /tmp/XXXXXXXXXXXX`
-  if ! curl -o ${COMMON_SCRIPT} ${BASE_URL}/lib/common.sh; then
+  if ! curl -o ${COMMON_SCRIPT} ${BASE_URL}/lib/common.sh?`date '+%s'`; then
     exit 1
   fi
 fi
