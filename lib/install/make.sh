@@ -10,11 +10,10 @@ if [ -z ${COMMON_SCRIPT} ]; then
 fi
 source ${COMMON_SCRIPT}
 
-# check deps
-call_deps make
-
 # install autoconf
 if [ ! -x ${BIN_DIR}/make ]; then
+  # check deps
+  call_deps make
   echo install make: start
   pushd .
   cd ${TMP_DIR}

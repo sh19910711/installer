@@ -10,11 +10,10 @@ if [ -z ${COMMON_SCRIPT} ]; then
 fi
 source ${COMMON_SCRIPT}
 
-# check deps
-call_deps m4
-
 # install autoconf
 if [ ! -x ${BIN_DIR}/m4 ]; then
+  # check deps
+  call_deps m4
   echo install m4: start
   pushd .
   cd ${TMP_DIR}

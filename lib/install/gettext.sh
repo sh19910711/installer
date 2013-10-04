@@ -10,11 +10,10 @@ if [ -z ${COMMON_SCRIPT} ]; then
 fi
 source ${COMMON_SCRIPT}
 
-# check deps
-call_deps gettext
-
 # install autoconf
 if [ ! -x ${BIN_DIR}/gettext ]; then
+  # check deps
+  call_deps gettext
   echo install gettext: start
   pushd .
   cd ${TMP_DIR}

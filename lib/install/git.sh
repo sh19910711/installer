@@ -10,12 +10,11 @@ if [ -z ${COMMON_SCRIPT} ]; then
 fi
 source ${COMMON_SCRIPT}
 
-# check deps
-call_deps git
-
 # install git
 # https://github.com/git/git/archive/v1.8.4.tar.gz
 if [ ! -x ${BIN_DIR}/git ]; then
+  # check deps
+  call_deps git
   echo install git: start
   pushd .
   cd ${TMP_DIR}

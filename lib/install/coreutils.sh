@@ -10,11 +10,10 @@ if [ -z ${COMMON_SCRIPT} ]; then
 fi
 source ${COMMON_SCRIPT}
 
-# check deps
-call_deps coreutils
-
 # install autoconf
 if [ ! -x ${BIN_DIR}/coreutils ]; then
+  # check deps
+  call_deps coreutils
   echo install coreutils: start
   pushd .
   cd ${TMP_DIR}

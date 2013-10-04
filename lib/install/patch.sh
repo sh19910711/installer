@@ -10,11 +10,10 @@ if [ -z ${COMMON_SCRIPT} ]; then
 fi
 source ${COMMON_SCRIPT}
 
-# check deps
-call_deps patch
-
 # install autoconf
 if [ ! -x ${BIN_DIR}/patch ]; then
+  # check deps
+  call_deps patch
   echo install patch: start
   pushd .
   cd ${TMP_DIR}

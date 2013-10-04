@@ -10,12 +10,11 @@ if [ -z ${COMMON_SCRIPT} ]; then
 fi
 source ${COMMON_SCRIPT}
 
-# check deps
-call_deps curl
-
 # install curl
 # https://curlhub.com/curl/curl/archive/v1.8.4.tar.gz
 if [ ! -x ${BIN_DIR}/curl ]; then
+  # check deps
+  call_deps curl
   echo install curl: start
   pushd .
   cd ${TMP_DIR}

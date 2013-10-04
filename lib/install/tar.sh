@@ -10,11 +10,10 @@ if [ -z ${COMMON_SCRIPT} ]; then
 fi
 source ${COMMON_SCRIPT}
 
-# check deps
-call_deps tar
-
 # install tar
 if [ ! -x ${BIN_DIR}/tar ]; then
+  # check deps
+  call_deps tar
   echo install tar: start
   pushd .
   exec_do cd ${TMP_DIR}
