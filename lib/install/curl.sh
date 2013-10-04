@@ -11,6 +11,12 @@ fi
 source ${COMMON_SCRIPT}
 
 # install curl
+CALLED=${TMP_DIR}/curl-${curl_version}
+if [ -d ${CALLED} ]; then
+  exit 0
+else
+  exec_do _mkdir ${CALLED}
+fi
 # https://curlhub.com/curl/curl/archive/v1.8.4.tar.gz
 if [ ! -x ${BIN_DIR}/curl ]; then
   # check deps

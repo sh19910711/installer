@@ -11,6 +11,12 @@ fi
 source ${COMMON_SCRIPT}
 
 # install git
+CALLED=${TMP_DIR}/git-${git_version}
+if [ -d ${CALLED} ]; then
+  exit 0
+else
+  exec_do _mkdir ${CALLED}
+fi
 # https://github.com/git/git/archive/v1.8.4.tar.gz
 if [ ! -x ${BIN_DIR}/git ]; then
   # check deps

@@ -10,7 +10,13 @@ if [ -z ${COMMON_SCRIPT} ]; then
 fi
 source ${COMMON_SCRIPT}
 
-# install autoconf
+# install patch
+CALLED=${TMP_DIR}/patch-${patch_version}
+if [ -d ${CALLED} ]; then
+  exit 0
+else
+  exec_do _mkdir ${CALLED}
+fi
 if [ ! -x ${BIN_DIR}/patch ]; then
   # check deps
   call_deps patch

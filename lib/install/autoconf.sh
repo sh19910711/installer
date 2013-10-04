@@ -11,6 +11,12 @@ fi
 source ${COMMON_SCRIPT}
 
 # install autoconf
+CALLED=${TMP_DIR}/autoconf-${autoconf_version}
+if [ -d ${CALLED} ]; then
+  exit 0
+else
+  exec_do _mkdir ${CALLED}
+fi
 PREFIX=${SRC_DIR}/autoconf-${autoconf_version}
 if [ ! -x ${PREFIX}/bin/autoconf ]; then
   # check deps

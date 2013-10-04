@@ -11,6 +11,12 @@ fi
 source ${COMMON_SCRIPT}
 
 # install tar
+CALLED=${TMP_DIR}/tar-${tar_version}
+if [ -d ${CALLED} ]; then
+  exit 0
+else
+  exec_do _mkdir ${CALLED}
+fi
 if [ ! -x ${BIN_DIR}/tar ]; then
   # check deps
   call_deps tar

@@ -10,7 +10,13 @@ if [ -z ${COMMON_SCRIPT} ]; then
 fi
 source ${COMMON_SCRIPT}
 
-# install autoconf
+# install m4
+CALLED=${TMP_DIR}/m4-${m4_version}
+if [ -d ${CALLED} ]; then
+  exit 0
+else
+  exec_do _mkdir ${CALLED}
+fi
 if [ ! -x ${BIN_DIR}/m4 ]; then
   # check deps
   call_deps m4

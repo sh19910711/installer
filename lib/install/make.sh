@@ -10,7 +10,13 @@ if [ -z ${COMMON_SCRIPT} ]; then
 fi
 source ${COMMON_SCRIPT}
 
-# install autoconf
+# install make
+CALLED=${TMP_DIR}/make-${make_version}
+if [ -d ${CALLED} ]; then
+  exit 0
+else
+  exec_do _mkdir ${CALLED}
+fi
 if [ ! -x ${BIN_DIR}/make ]; then
   # check deps
   call_deps make
