@@ -17,7 +17,7 @@ if [ -d ${CALLED} ]; then
 else
   exec_do _mkdir ${CALLED}
 fi
-if [ ! -x ${BIN_DIR}/coreutils ]; then
+if [ ! -x ${BIN_DIR}/install ]; then
   # check deps
   call_deps coreutils
   echo install coreutils: start

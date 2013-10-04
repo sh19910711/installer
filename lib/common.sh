@@ -26,6 +26,11 @@ call_installer() {
   for install in ${installs}; do
     echo "    dep: ${install}"
     curl -o - ${BASE_URL}/lib/install/${install}.sh?`date '+%s'` | bash
+    if [ ! -z "${BASH_VERSION}" ]; then
+      hash -r
+    else
+      rehash
+    fi
   done
 }
 
@@ -35,6 +40,11 @@ call_deps() {
   for install in ${deps}; do
     echo "    dep: ${install}"
     curl -o - ${BASE_URL}/lib/install/${install}.sh?`date '+%s'` | bash
+    if [ ! -z "${BASH_VERSION}" ]; then
+      hash -r
+    else
+      rehash
+    fi
   done
 }
 

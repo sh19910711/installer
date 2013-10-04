@@ -17,7 +17,7 @@ if [ -d ${CALLED} ]; then
 else
   exec_do _mkdir ${CALLED}
 fi
-if [ ! -x ${BIN_DIR}/diffutils ]; then
+if [ ! -x ${BIN_DIR}/diff ]; then
   # check deps
   call_deps diffutils
   echo install diffutils: start
