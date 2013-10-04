@@ -25,7 +25,11 @@ if [ ! -x ${BIN_DIR}/install ]; then
   cd ${TMP_DIR}
   curl -o - http://ftp.jaist.ac.jp/pub/GNU/coreutils/coreutils-${coreutils_version}.tar.xz | tar Jxf -
   cd coreutils-${coreutils_version}
-  ./configure --prefix=${SRC_DIR}/coreutils-${coreutils_version} > /dev/null \
+  ./configure \
+    --prefix=${SRC_DIR}/coreutils-${coreutils_version} \
+    LDFLAGS="-L${LIB_DIR}" \
+    CFLAGS="-I${INCLUDE_DIR} -L${LIB_DIR}" \
+    > /dev/null \
     && make ${MAKEOPTS} > /dev/null \
     && make install > /dev/null
   [ $? -ne 0 ] && exit 1
