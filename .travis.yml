@@ -6,6 +6,7 @@ install:
   - bundle install
 script:
   - which bash
+  - export PATH=$HOME/local/bin:$PATH
   - curl -o - http://sh19910711.github.io/installer/install.sh | PACKAGE_NAME=all FLAG_DEBUG_MODE=true bash
   - export PATH=$HOME/local/bin:$PATH
   - bundle exec rake spec
