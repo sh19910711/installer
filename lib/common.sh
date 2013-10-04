@@ -12,7 +12,7 @@ export PATH=${BIN_DIR}/bin:${PATH}
 export INCLUDE=${INCLUDE_DIR}:${INCLUDE}
 export C_INCLUDE_PATH=${INCLUDE_DIR}:${C_INCLUDE_PATH}
 export CPPFLAGS="-I${INCLUDE_DIR} ${CPPFLAGS}"
-export LDFLAGS="-L${LIB_DIR} ${CPPFLAGS}"
+export LDFLAGS="-L${LIB_DIR} ${LDFLAGS}"
 
 _mkdir() {
   if [ ! -d $1 ]; then
