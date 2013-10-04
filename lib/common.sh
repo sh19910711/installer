@@ -68,6 +68,7 @@ tar
 coreutils
 curl
 patch
+ruby
 '
 export all_deps=''
 
@@ -82,6 +83,12 @@ export packages_rbenv=
 export rbenv_version=0.4.0
 export rbenv_installs='rbenv'
 export rbenv_deps='git make'
+
+# ruby
+export packages_ruby=
+export ruby_version=2.0.0-p247
+export ruby_installs='ruby'
+export ruby_deps='rbenv'
 
 # diffutils
 export packages_diffutils=
