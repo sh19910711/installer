@@ -111,7 +111,7 @@ export curl_deps='make'
 export packages_coreutils=
 export coreutils_version=8.21
 export coreutils_installs='coreutils'
-export coreutils_deps='gmp tar make'
+export coreutils_deps='tar make'
 
 # make
 export packages_make=

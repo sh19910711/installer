@@ -27,8 +27,7 @@ if [ ! -x ${BIN_DIR}/install ]; then
   cd coreutils-${coreutils_version}
   ./configure \
     --prefix=${SRC_DIR}/coreutils-${coreutils_version} \
-    LDFLAGS="-L${LIB_DIR}" \
-    CFLAGS="-I${INCLUDE_DIR} -L${LIB_DIR}" \
+    --without-gmp \
     > /dev/null \
     && make ${MAKEOPTS} > /dev/null \
     && make install > /dev/null
