@@ -12,7 +12,6 @@ source ${COMMON_SCRIPT}
 
 # check deps
 call_deps autoconf
-result=1
 
 # install autoconf
 if [ ! -x ${BIN_DIR}/autoconf ]; then
@@ -29,4 +28,3 @@ if [ ! -x ${BIN_DIR}/autoconf ]; then
   exec_do ln -s ${SRC_DIR}/autoconf-${autoconf_version}/bin/* ${BIN_DIR}
   echo install autoconf: finish
 fi
-exit result
