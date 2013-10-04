@@ -11,6 +11,6 @@ describe 'command' do
   end
   it 'git' do
     ret = `$HOME/local/bin/git --version`
-    ret.should('git version 1.8.4').should == true
+    ret.include?('git version 1.8.4').should == true
   end
 end
