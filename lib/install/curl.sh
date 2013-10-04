@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ -z ${BASE_URL} ] && BASE_URL=http://sh19910711.curlhub.io/installer
+[ -z ${BASE_URL} ] && BASE_URL=http://sh19910711.github.io/installer
 
 if [ -z ${COMMON_SCRIPT} ]; then
   export COMMON_SCRIPT=`mktemp /tmp/XXXXXXXXXXXX`

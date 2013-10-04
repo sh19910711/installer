@@ -68,7 +68,7 @@ export m4_deps='make'
 export packages_patch=
 export patch_version=2.7.1
 export patch_installs='patch'
-export patch_deps='tar make'
+export patch_deps='make'
 
 # tar
 export packages_tar=

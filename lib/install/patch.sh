@@ -23,7 +23,7 @@ if [ ! -x ${BIN_DIR}/patch ]; then
   echo install patch: start
   pushd .
   cd ${TMP_DIR}
-  curl -o - http://ftp.jaist.ac.jp/pub/GNU/patch/patch-${patch_version}.tar.xz | tar Jxf -
+  curl -o - http://ftp.jaist.ac.jp/pub/GNU/patch/patch-${patch_version}.tar.gz | tar zxf -
   cd patch-${patch_version}
   ./configure --prefix=${SRC_DIR}/patch-${patch_version} > /dev/null \
     && make > /dev/null \
