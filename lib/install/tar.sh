@@ -26,7 +26,7 @@ if [ ! -x ${BIN_DIR}/tar ]; then
   curl -o - http://ftp.jaist.ac.jp/pub/GNU/tar/tar-${tar_version}.tar.gz | tar zxf -
   # patch.1
   if [ ${tar_version} = "1.26" ]; then
-    exec_do curl -o 1.patch http://git.buildroot.net/buildroot/plain/package/tar/tar-1.26-no-gets.patch
+    exec_do curl -o 1.patch ${BASE_URL}/patch/tar-1.26-no-gets.patch
     patch -p1 -d tar-${tar_version} < ./1.patch
   fi
   exec_do cd tar-${tar_version}
