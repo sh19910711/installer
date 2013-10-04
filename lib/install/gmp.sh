@@ -17,7 +17,7 @@ if [ -d ${CALLED} ]; then
 else
   exec_do _mkdir ${CALLED}
 fi
-if [ ! -x ${BIN_DIR}/gmp ]; then
+if [ ! -e ${INCLUDE_DIR}/gmp.h ]; then
   # check deps
   call_deps gmp
   echo install gmp: start
