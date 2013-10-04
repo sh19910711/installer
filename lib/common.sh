@@ -54,6 +54,7 @@ git
 tar
 coreutils
 curl
+patch
 '
 export all_deps=''
 
@@ -63,11 +64,17 @@ export m4_version=1.4.17
 export m4_installs='m4'
 export m4_deps='make'
 
+# patch
+export packages_patch=
+export patch_version=2.7.1
+export patch_installs='patch'
+export patch_deps='tar make'
+
 # tar
 export packages_tar=
 export tar_version=1.26
 export tar_installs='tar'
-export tar_deps='curl make'
+export tar_deps='patch curl make'
 
 # curl
 export packages_curl=

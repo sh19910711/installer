@@ -25,4 +25,8 @@ describe 'command' do
     ret = `$HOME/local/bin/curl --version`
     ret.include?('curl 7.32.0').should == true
   end
+  it 'patch' do
+    ret = `$HOME/local/bin/patch --version`
+    ret.include?('GNU patch 2.7.1').should == true
+  end
 end
