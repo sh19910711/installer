@@ -23,10 +23,13 @@ if [ ! -x ${BIN_DIR}/gettext ]; then
   cd gettext-${gettext_version}
   ./configure \
     --prefix=${SRC_DIR}/gettext-${gettext_version} \
+    --enable-shared \
+    --enable-relocatable \
     --disable-debug \
     --disable--dependency-tracking \
     --disable-java \
     --disable-csharp \
+    --without-emacs \
     > /dev/null \
     && make > /dev/null \
     && make install > /dev/null
