@@ -29,4 +29,8 @@ describe 'command' do
     ret = `$HOME/local/bin/patch --version`
     ret.include?('GNU patch 2.7.1').should == true
   end
+  it 'diffutils' do
+    ret = `$HOME/local/bin/diff --version`
+    ret.include?('diff (GNU diffutils) 3.2').should == true
+  end
 end
