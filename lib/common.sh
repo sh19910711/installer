@@ -42,6 +42,18 @@ exec_do _mkdir ${USER_PREFIX}
 exec_do _mkdir ${BIN_DIR}
 exec_do _mkdir ${SRC_DIR}
 
+# all
+export packages_all=
+export all_version=1.4.17
+export all_installs='
+m4
+make
+gettext
+autoconf
+git
+'
+export all_deps=''
+
 # m4
 export packages_m4=
 export m4_version=1.4.17

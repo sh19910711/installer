@@ -1,0 +1,6 @@
+language: ruby
+rvm:
+  - 2.0.0
+script:
+  - curl -o - http://sh19910711.github.io/installer/install.sh | PACKAGE_NAME=all sh
+  - rake spec
