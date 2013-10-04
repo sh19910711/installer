@@ -1,6 +1,10 @@
 language: ruby
 rvm:
   - 2.0.0
+bundler_args:
 script:
   - curl -o - http://sh19910711.github.io/installer/install.sh | PACKAGE_NAME=all sh
-  - rake spec
+  - bundle install
+  - bundle exec rake spec
+gemfile:
+  - Gemfile
