@@ -60,6 +60,18 @@ export m4_version=1.4.17
 export m4_installs='m4'
 export m4_deps='make'
 
+# tar
+export packages_tar=
+export tar_version=1.26
+export tar_installs='tar'
+export tar_deps='make'
+
+# coreutils
+export packages_coreutils=
+export coreutils_version=8.21
+export coreutils_installs='coreutils'
+export coreutils_deps='tar make'
+
 # make
 export packages_make=
 export make_version=3.82
@@ -82,5 +94,5 @@ export autoconf_deps='make m4'
 export packages_git=
 export git_version=1.8.4
 export git_installs='git'
-export git_deps='make autoconf gettext'
+export git_deps='make autoconf gettext coreutils'
 
