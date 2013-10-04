@@ -51,6 +51,9 @@ make
 gettext
 autoconf
 git
+tar
+coreutils
+curl
 '
 export all_deps=''
 
@@ -64,7 +67,13 @@ export m4_deps='make'
 export packages_tar=
 export tar_version=1.26
 export tar_installs='tar'
-export tar_deps='make'
+export tar_deps='curl make'
+
+# curl
+export packages_curl=
+export curl_version=7.32.0
+export curl_installs='curl'
+export curl_deps='make'
 
 # coreutils
 export packages_coreutils=
