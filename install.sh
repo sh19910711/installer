@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 [ -z ${BASE_URL} ] && BASE_URL=http://sh19910711.github.io/installer
 [ -z ${PACKAGE_NAME} ] && PACKAGE_NAME=usage
