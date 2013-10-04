@@ -32,6 +32,7 @@ if [ ! -x ${BIN_DIR}/git ]; then
     > /dev/null \
     && make ${MAKEOPTS} > /dev/null \
     && make install \
+    INSTALL=${BIN_DIR}/install \
     > /dev/null
   [ $? -ne 0 ] && exit 1
   ln -s ${SRC_DIR}/git-${git_version}/bin/* ${BIN_DIR}
