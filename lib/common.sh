@@ -24,6 +24,7 @@ call_installer() {
   installs=`eval 'echo $'${1}'_installs'`
   deps=`eval 'echo $'${1}'_deps'`
   for install in ${installs}; do
+    echo "    dep: ${install}"
     curl -o - ${BASE_URL}/lib/install/${install}.sh?`date '+%s'` | bash
   done
 }
@@ -32,6 +33,7 @@ call_deps() {
   installs=`eval 'echo $'${1}'_installs'`
   deps=`eval 'echo $'${1}'_deps'`
   for install in ${deps}; do
+    echo "    dep: ${install}"
     curl -o - ${BASE_URL}/lib/install/${install}.sh?`date '+%s'` | bash
   done
 }
