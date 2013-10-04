@@ -13,12 +13,7 @@ if [ -z ${COMMON_SCRIPT} ]; then
 fi
 source ${COMMON_SCRIPT}
 
-# autoconf
-packages_autoconf=
-autoconf_installs=autoconf
-autoconf_deps=
-
-sub_usage() {
+usage() {
   echo
   echo "Usage: curl -o - ${BASE_URL}/install.sh | PACKAGE_NAME={PACKAGE_NAME} sh"
   echo
@@ -27,6 +22,9 @@ sub_usage() {
     # Package name
     package_name=${package#*_}
     echo "    name: ${package_name}"
+    # Version
+    version=`eval 'echo $'${package_name}'_version'`
+    echo "        version: ${version}"
     # Installers
     installs=`eval 'echo $'${package_name}'_installs'`
     for install in ${installs}; do
@@ -42,19 +40,9 @@ sub_usage() {
   echo
 }
 
-call_installer() {
-  installs=`eval 'echo $'${PACKAGE_NAME}'_installs'`
-  deps=`eval 'echo $'${PACKAGE_NAME}'_deps'`
-  echo call_installer
-  echo ${installs}
-  echo ${deps}
-  for install in ${deps}; do
-    curl -o - ${BASE_URL}/lib/install/${install}.sh | sh
-  done
-  for install in ${installs}; do
-    curl -o - ${BASE_URL}/lib/install/${install}.sh | sh
-  done
-}
-
-call_installer
+if [  ${PACKAGE_NAME} = "usage" ]; then
+  usage
+else
+  call_installer ${PACKAGE_NAME}
+fi
 

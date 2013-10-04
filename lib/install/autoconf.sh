@@ -10,18 +10,20 @@ if [ -z ${COMMON_SCRIPT} ]; then
 fi
 source ${COMMON_SCRIPT}
 
+# check deps
+call_deps autoconf
+
 # install autoconf
-# http://ftp.jaist.ac.jp/pub/GNU/autoconf/autoconf-2.69.tar.gz
 if [ ! -x ${BIN_DIR}/autoconf ]; then
   echo install autoconf: start
   pushd .
   exec_do cd ${TMP_DIR}
-  curl -o - http://ftp.jaist.ac.jp/pub/GNU/autoconf/autoconf-2.69.tar.gz | tar zxf -
+  curl -o - http://ftp.jaist.ac.jp/pub/GNU/autoconf/autoconf-${autoconf_version}.tar.gz | tar zxf -
   exec_do cd autoconf-*
-  ./configure --prefix=${SRC_DIR}/autoconf-2.69 \
+  ./configure --prefix=${SRC_DIR}/autoconf-${autoconf_version} \
     && make \
     && make install
   popd
-  exec_do ln -s ${SRC_DIR}/autoconf-2.69/bin/* ${BIN_DIR}
+  exec_do ln -s ${SRC_DIR}/autoconf-${autoconf_version}/bin/* ${BIN_DIR}
   echo install autoconf: finish
 fi
