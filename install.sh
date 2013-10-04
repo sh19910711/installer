@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ -z ${BASE_URL} ] && BASE_URL=http://sh19910711.github.io
+[ -z ${BASE_URL} ] && BASE_URL=http://sh19910711.github.io/installer
 [ -z ${PACKAGE_NAME} ] && PACKAGE_NAME=usage
 echo BASE_URL: ${BASE_URL}
 echo PACKAGE_NAME: ${PACKAGE_NAME}
