@@ -30,6 +30,7 @@ if [ ! -x ${SRC_DIR}/rbenv-${rbenv_version}/bin/rbenv ]; then
   if [ ! -z ${BASH_VERSION} ]; then
     echo 'export RBENV_ROOT=$HOME/local/src/rbenv-'${rbenv_version} >> $HOME/.bash_profile
     echo 'eval "$(rbenv init -)"' >> $HOME/.bash_profile
+    source $HOME/.bash_profile
   fi
   popd
   echo install rbenv: finish
