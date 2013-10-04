@@ -8,7 +8,7 @@ export INCLUDE_DIR=${USER_PREFIX}/include
 export LIB_DIR=${USER_PREFIX}/lib
 export SRC_DIR=${USER_PREFIX}/src
 [ -z ${TMP_DIR} ] && export TMP_DIR=`mktemp -d /tmp/XXXXXXXXXXXXXXXXXXXXXXXX`
-export PATH=${BIN_DIR}/bin:${PATH}
+export PATH=${BIN_DIR}:${PATH}
 
 _mkdir() {
   if [ ! -d $1 ]; then
