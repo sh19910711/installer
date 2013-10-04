@@ -64,6 +64,12 @@ export m4_version=1.4.17
 export m4_installs='m4'
 export m4_deps='make'
 
+# gmp
+export packages_gmp=
+export gmp_version=5.1.3
+export gmp_installs='gmp'
+export gmp_deps='tar make'
+
 # patch
 export packages_patch=
 export patch_version=2.7.1
