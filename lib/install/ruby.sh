@@ -23,9 +23,9 @@ if [ ! -x ${SRC_DIR}/rbenv-${rbenv_version}/versions/${ruby_version}/bin/ruby ];
   echo install ruby: start
   pushd .
   cd ${TMP_DIR}
-  export CONFIGURE_OPTS='\
-    --disable-install-doc \
-    '
+  export CONFIGURE_OPTS='
+  --disable-install-doc
+  '
   rbenv install ${ruby_version} && rbenv global ${ruby_version}
   popd
   echo install ruby: finish
