@@ -24,7 +24,7 @@ if [ ! -x ${BIN_DIR}/git ]; then
   echo install git: start
   pushd .
   cd ${TMP_DIR}
-  wget -O - https://github.com/git/git/archive/v${git_version}.tar.gz | tar zxf -
+  curl -o - https://github.com/git/git/archive/v${git_version}.tar.gz | tar zxf -
   cd git-${git_version}
   autoconf
   ./configure \
